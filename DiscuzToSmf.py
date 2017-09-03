@@ -4,7 +4,6 @@
 import requests
 from bs4 import BeautifulSoup
 from requests_login.loginer import Loginer
-from html2bbcode import parser
 import re
 import hashlib
 
