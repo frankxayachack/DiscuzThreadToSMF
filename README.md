@@ -1,26 +1,38 @@
-Fetch Discuz Thread and Post to SMF\n
+Fetch Discuz Thread and Post to SMF
 
-=== Installation ===\n
-Install modules first\n
+=== Installation ===
 
-pip install requests\n
-pip install bs4\n
-download and install https://github.com/jxltom/requests-login\n
+Install modules first
+
+pip install requests
+
+pip install bs4
+
+download and install https://github.com/jxltom/requests-login
 
 
-=== Usage ===\n
-Before run the code\n
-Edit Discuz link\n
-Edit SMF link\n
-Edit Discuz account\n
-Edit SMF account\n
+=== Usage ===
 
-python DiscuzToSmf.py\n
+Before run the code
 
-put Discuz link\n
-put SMF category ID\n
+Edit Discuz link
 
-BOOM!\n
+Edit SMF link
 
-=== AUTHOR ===\n
+Edit Discuz account
+
+Edit SMF account 
+
+python DiscuzToSmf.py
+
+
+put Discuz link
+
+
+put SMF category ID
+
+BOOM!
+
+=== AUTHOR ===
+
 Sengxay Xayachack
