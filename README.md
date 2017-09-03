@@ -10,6 +10,10 @@ pip install bs4
 
 download and install https://github.com/jxltom/requests-login
 
+** IMPORTANT **
+Enable html tag in SMF 
+
+Admin Control Panel -> Post and Topics -> Bulletin Board Code tab and check "Enable basic HTML in posts".
 
 === Usage ===
 
@@ -25,11 +29,9 @@ Edit SMF account
 
 python DiscuzToSmf.py
 
+put Discuz thread link e.g http://discuz.com/forum.php?mod=viewthread&tid=10883
 
-put Discuz link
-
-
-put SMF category ID
+put SMF category ID e.g 1 or 2 (check in url)
 
 BOOM!
 

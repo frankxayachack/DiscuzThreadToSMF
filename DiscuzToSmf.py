@@ -11,14 +11,14 @@ import hashlib
 DiscuzDomain = '' # e.g http://discuz.com
 SmfDomain = '' # e.g http://smf.com
 
-DisUsername = ''
-DisPassword = ''
+DisUsername = '' #Discuz Username
+DisPassword = '' #Discuz Password
 
-SmfUsername = ''
-SmfPassword = ''
+SmfUsername = '' #SMF Username 
+SmfPassword = '' #SMF Password
 
-DisLink = raw_input("Source Link (Discuz) : ")
-CatID = input('SMF Category ID : ')
+DisLink = raw_input("Source Link (Discuz) : ") # e.g http://discuz.com/forum.php?mod=viewthread&tid=10883
+CatID = input('SMF Category ID : ') # e.g 1 or 2 (check in URL)
 
 #Discuz PART
 
