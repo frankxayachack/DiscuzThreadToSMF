@@ -43,6 +43,7 @@ desc = desc.split('\n')
 desc.pop(0)
 desc.pop(-1)
 final = '\n'.join(desc)
+final = final.replace("file=","src=")
 
 #Content
 title = soup.find(id='thread_subject').string
