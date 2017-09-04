@@ -69,7 +69,6 @@ s = requests.Session()
 
 #LOGIN TO SMF
 
-
 uri = "/index.php?action=login"
 
 url = SmfDomain+uri
@@ -82,12 +81,15 @@ hash_passwd = re.search(r"this, '(.+)'",html)
 
 #get 2 hidden fields with random values
 hidden = re.findall(r"type=\"hidden\" name=\"(.*?)\" value=\"(.*?)\"",html)
-print "hidden name => " + hidden[0][0] + " | hidden value => " + hidden[0][1]
 
 #set Variables
 HashPassword = hash_passwd.group(1)
-hName = hidden[0][0]
-hValue = hidden[0][1]
+if hidden[0][0] == 'hash_passwrd':
+        hName = hidden[1][0]
+        hValue = hidden[1][1]
+else:
+        hName = hidden[0][0]
+        hValue = hidden[0][1]
 
 #encrypt before send to server sha1(sha1(user+pass)+hash_passwd)
 hPassword = hashlib.sha1(hashlib.sha1(SmfUsername+SmfPassword).hexdigest()+HashPassword).hexdigest()
