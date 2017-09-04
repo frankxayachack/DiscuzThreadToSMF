@@ -27,14 +27,16 @@ query = '/member.php?mod=logging&action=login&loginsubmit=yes&inajax=1'
 data = dict(loginfield=DisUsername, questionid='0')
 cookies = Loginer(query, data)(DiscuzDomain, user=dict(username=DisUsername, password=DisPassword))
 if cookies:
-	print "Discuz Logged in!"
+		print "Discuz Logged in!"
 else:
         print "Discuz Login failed!"
         exit(0)
 
+#END LOGIN
+
+#Fetch content
 r = requests.get(DisLink, cookies = cookies)
 soup = BeautifulSoup(r.text, 'html.parser')
-#END LOGIN
 
 #remove unnecessery information
 td = soup.find("td","t_f")
@@ -42,8 +44,16 @@ desc = str(td)
 desc = desc.split('\n')
 desc.pop(0)
 desc.pop(-1)
+
+#author
+author = soup.find("div","authi")
+author = str(author)
+author = re.search(r"style=\"color: (.+)\">(.+)</a>",author)
+author = author.group(2)
+
 final = '\n'.join(desc)
 final = final.replace("file=","src=")
+final = final + "\n<br>by: " + author
 
 #Content
 title = soup.find(id='thread_subject').string
