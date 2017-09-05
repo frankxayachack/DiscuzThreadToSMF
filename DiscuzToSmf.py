@@ -108,7 +108,7 @@ hPassword = hashlib.sha1(hashlib.sha1(SmfUsername+SmfPassword).hexdigest()+HashP
 data = {'user':SmfUsername, "passwrd":"", "cookielength":"-1","hash_passwrd":hPassword,hName:hValue}
 #print data
 r = s.post(SmfDomain+"/index.php?action=login2",data=data)
-if SmfUsername in r.text:
+if "logout" in r.text:
     print "SMF Logged in"
 else:
     print "SMF Login failed"
